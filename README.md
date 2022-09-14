@@ -1,26 +1,42 @@
 # Zedboard Root Repository
 
-IMPORTANT: No demos are currently present in this repository. Take a look at the Resource Center, link below, for earlier releases.
+## Zedboard FMC-Pcam-Adapter Demo
 
-This repository contains all demos for the Zedboard.
+### Description
 
-For more information about the Zedboard, visit its [Resource Center](https://reference.digilentinc.com/reference/programmable-logic/zedboard/start) on Digilent Reference.
+This branch contains sources for the Zedboard FMC-Pcam-Adapter Demo.
 
-Each demo contained in this repository is documented on the Digilent Wiki, links in the table below.
+This project demonstrates the usage of the FMC Pcam Adapter as an interface from one to four different Pcam cameras and the ZedBoard platform. The Video Stream from each different camera is getting in through the MIPI/FMC connectors and out through the carrier VGA port. For errors and feed-back messages, an UART interface is present.	
 
-| Wiki Link | Demo Master Branch | Submodules Used |
-|-----------|--------------------|-----------------|
-| [Zedboard <Demo Name>](https://reference.digilentinc.com/reference/programmable-logic/Zedboard/demos/<demo-name>) | <variant>/<demo>/master | HW,OS,SW, removing unused components |
+For more information on the Zedboard FMC-Pcam-Adapter Demo, including setup instructions, visit its [Demo Page](https://digilent.com/reference/programmable-logic/zedboard/demos/fmc-pcam) on the Digilent Wiki.
 
-## Repository Description
+For more information on the Zedboard, including other demos that may be available, see its [Resource Center](https://digilent.com/reference/programmable-logic/zedboard/start) on the Digilent Wiki.
 
-This repository is designed to offer a unified and comprehensive approach to all of the aspects of the demos that we provide for the Zedboard, across multiple tools. By cloning this repo recursively you will receive the repositories for Vivado projects (HW), and Vitis workspaces (SW). Each submodule may have its own submodule dependencies which will also be pulled when cloning. An important aspect of this structure is the fact that the SW heavily depends on hardware hand-off files from the HW repository.
+#### Implementation details
 
-This repository also provides releases containing project and image files used by the various tools involved. Releases provide files that are directly usable, without requiring the use git or any scripting systems. Documentation of each demo, as well as instructions for using their releases, can be found by visiting the corresponding pages on the Digilent Wiki, links below. All releases in this repository can be found in this repository's [releases page](https://github.com/Digilent/Zedboard/releases), however, use of the wiki pages to find specific well-tested releases is advised.
+During the 2022.1 upgrade, significant changes were made to the VDMA synchronization mechanism, which is needed to make sure the write operations (camera frames being stored to DDR) and read operations (VGA output reading frames from DDR) don't overlap, resulting in unwanted frame tearing. More details can be found on the demo's wiki page and in both Vivado and Vitis projects' comments.
 
-For instructions on how to use this repository with git, and for additional documentation on the submodule and branch structures used, please visit [Digilent FPGA Demo Git Repositories](https://reference.digilentinc.com/reference/programmable-logic/documents/git) on the Digilent Wiki. Note that use of git is not required to use this demo. Digilent recommends the use of project releases, for which instructions can be found in each demo wiki page, linked in the table of demos, above.
+### Git Navigation Information
 
-Demos were moved into this repository during 2020.1 updates. History of these demos prior to these updates can be found in their old repositories, linked below:
-* https://github.com/Digilent/<Repo>
+For instructions on how to use this repository with git, and for additional documentation on the submodule and branch structures used, please visit [Digilent FPGA Demo Git Repositories](https://reference.digilentinc.com/reference/programmable-logic/documents/git) on the Digilent Wiki. Note that use of git is not required to use this demo. Digilent recommends the use of project releases, for which instructions can be found in each demo wiki page, linked above.
 
-This repository took the place of a previous repository holding Zedboard demo projects, which can now be found at https://github.com/Digilent/Zedboard-old.
+To see other demos in this repository, see the master branch's [README](https://github.com/Digilent/Zedboard).
+
+Some demos do not require some submodules, in these cases, they are still provided to ease switching between demos in git. When unused, the submodule folder is largely empty, except for a readme containing only the heading "Root commit". This demo contains the following submodules:
+
+| Submodule | Used by this demo |
+|-----------|-------------------|
+| HW        | Yes      |
+| OS        | No       |
+| SW        | Yes      |
+
+### Requirements
+
+The following are required for use of this demo. For more information on how to get any hardware or software you may be missing, see the Demo Page, linked above.
+
+* ZedBoard with an external 12V Power Supply
+* 2 Micro-USB cables. One for programming and the other one for the uart interface
+* 1 VGA cable
+* FMC-Pcam-Adapter board
+* From 1 to 4 Pcam-5C cameras
+* VGA monitor

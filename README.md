@@ -1,7 +1,5 @@
 # Zedboard Root Repository
 
-IMPORTANT: No demos are currently present in this repository. Take a look at the Resource Center, link below, for earlier releases.
-
 This repository contains all demos for the Zedboard.
 
 For more information about the Zedboard, visit its [Resource Center](https://reference.digilentinc.com/reference/programmable-logic/zedboard/start) on Digilent Reference.
@@ -10,7 +8,8 @@ Each demo contained in this repository is documented on the Digilent Wiki, links
 
 | Wiki Link | Demo Master Branch | Submodules Used |
 |-----------|--------------------|-----------------|
-| [Zedboard <Demo Name>](https://reference.digilentinc.com/reference/programmable-logic/Zedboard/demos/<demo-name>) | <variant>/<demo>/master | HW,OS,SW, removing unused components |
+| [Zedboard OLED](https://digilent.com/reference/programmable-logic/zedboard/demos/oled) | OLED/master | HW |
+| [Zedboard FMC-Pcam-Adapter](https://digilent.com/reference/programmable-logic/zedboard/demos/fmc-pcam) | FMC-Pcam-Adapter/master | HW, SW |
 
 ## Repository Description
 
@@ -21,6 +20,7 @@ This repository also provides releases containing project and image files used b
 For instructions on how to use this repository with git, and for additional documentation on the submodule and branch structures used, please visit [Digilent FPGA Demo Git Repositories](https://reference.digilentinc.com/reference/programmable-logic/documents/git) on the Digilent Wiki. Note that use of git is not required to use this demo. Digilent recommends the use of project releases, for which instructions can be found in each demo wiki page, linked in the table of demos, above.
 
 Demos were moved into this repository during 2020.1 updates. History of these demos prior to these updates can be found in their old repositories, linked below:
-* https://github.com/Digilent/<Repo>
+* https://github.com/Digilent/Zedboard-OLED
+* https://github.com/Digilent/ZedBoard-FMC-Pcam-Adapter-DEMO
 
 This repository took the place of a previous repository holding Zedboard demo projects, which can now be found at https://github.com/Digilent/Zedboard-old.

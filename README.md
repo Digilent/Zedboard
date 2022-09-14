@@ -1,26 +1,34 @@
 # Zedboard Root Repository
 
-IMPORTANT: No demos are currently present in this repository. Take a look at the Resource Center, link below, for earlier releases.
+## Zedboard OLED Demo
 
-This repository contains all demos for the Zedboard.
+### Description
 
-For more information about the Zedboard, visit its [Resource Center](https://reference.digilentinc.com/reference/programmable-logic/zedboard/start) on Digilent Reference.
+This branch contains sources for the Zedboard OLED Demo.
 
-Each demo contained in this repository is documented on the Digilent Wiki, links in the table below.
+This project is a Vivado demo using the Zedboard's LEDs, pushbuttons and OLED Display written in Verilog. When programmed onto the board, the display will automatically be initialized. When you are done operating the demo, and want to turn your board off, press the CPU Reset Button to turn the display off. LED0 is tied to the status of the OLED display. If the LED0 is on so is the OLED display. The display can be turned on from an off state by pressing the CPU Reset Button again. The OLED Display is controlled by the BTNR, BTNU, BTNC and BTND of the D-Pad Buttons.
 
-| Wiki Link | Demo Master Branch | Submodules Used |
-|-----------|--------------------|-----------------|
-| [Zedboard <Demo Name>](https://reference.digilentinc.com/reference/programmable-logic/Zedboard/demos/<demo-name>) | <variant>/<demo>/master | HW,OS,SW, removing unused components |
+For more information on the Zedboard OLED, including setup instructions, visit its [Demo Page](https://digilent.com/reference/programmable-logic/zedboard/demos/oled) on the Digilent Wiki.
 
-## Repository Description
+For more information on the Zedboard, including other demos that may be available, see its [Resource Center](https://digilent.com/reference/programmable-logic/zedboard/start) on the Digilent Wiki.
 
-This repository is designed to offer a unified and comprehensive approach to all of the aspects of the demos that we provide for the Zedboard, across multiple tools. By cloning this repo recursively you will receive the repositories for Vivado projects (HW), and Vitis workspaces (SW). Each submodule may have its own submodule dependencies which will also be pulled when cloning. An important aspect of this structure is the fact that the SW heavily depends on hardware hand-off files from the HW repository.
+### Git Navigation Information
 
-This repository also provides releases containing project and image files used by the various tools involved. Releases provide files that are directly usable, without requiring the use git or any scripting systems. Documentation of each demo, as well as instructions for using their releases, can be found by visiting the corresponding pages on the Digilent Wiki, links below. All releases in this repository can be found in this repository's [releases page](https://github.com/Digilent/Zedboard/releases), however, use of the wiki pages to find specific well-tested releases is advised.
+For instructions on how to use this repository with git, and for additional documentation on the submodule and branch structures used, please visit [Digilent FPGA Demo Git Repositories](https://reference.digilentinc.com/reference/programmable-logic/documents/git) on the Digilent Wiki. Note that use of git is not required to use this demo. Digilent recommends the use of project releases, for which instructions can be found in each demo wiki page, linked above.
 
-For instructions on how to use this repository with git, and for additional documentation on the submodule and branch structures used, please visit [Digilent FPGA Demo Git Repositories](https://reference.digilentinc.com/reference/programmable-logic/documents/git) on the Digilent Wiki. Note that use of git is not required to use this demo. Digilent recommends the use of project releases, for which instructions can be found in each demo wiki page, linked in the table of demos, above.
+To see other demos in this repository, see the master branch's [README](https://github.com/Digilent/Zedboard).
 
-Demos were moved into this repository during 2020.1 updates. History of these demos prior to these updates can be found in their old repositories, linked below:
-* https://github.com/Digilent/<Repo>
+Some demos do not require some submodules, in these cases, they are still provided to ease switching between demos in git. When unused, the submodule folder is largely empty, except for a readme containing only the heading "Root commit". This demo contains the following submodules:
 
-This repository took the place of a previous repository holding Zedboard demo projects, which can now be found at https://github.com/Digilent/Zedboard-old.
+| Submodule | Used by this demo |
+|-----------|-------------------|
+| HW        | Yes      |
+| OS        | No       |
+| SW        | No       |
+
+### Requirements
+
+The following are required for use of this demo. For more information on how to get any hardware or software you may be missing, see the Demo Page, linked above.
+
+* ZedBoard with an external 12V Power Supply
+* 1 Micro-USB cable, for programming

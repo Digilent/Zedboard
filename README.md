@@ -4,9 +4,25 @@
 
 ### Description
 
+| Button     | Function                                                           |
+| ---------- | ------------------------------------------------------------------ |
+| BTNC       | With the display on, each pixel on the display can                 | 
+|            | be lit up at once by pressing the center D-Pad button (BTNC).      |
+|            | Press the BTNC to return the display to its original state         |
+| BTNU       | With the display on, you can load pre-defined text onto the        |
+|            | display by pressing the up D-Pad button (BTNU)                     |                          
+| BTNR       | The OLED display can be turned on and off by pressing the CPU_RESET|
+|  	     | button above the PROG button                                       |
+| BTND       | To clear the display, press the down D-Pad button (BTND)           |
+
+!!! Before shutting down/reprogramming the board please make sure you properly turn off the OLED display by pressing the BTNR button. When the display is off, LD0 should also be off.
+This is necessary to prevent damaging the OLED display.
+
+After shutting down the OLED display from the BTNR button, it is possible to open it again from the BTNR button only after 3.5 seconds passed.
+
 This branch contains sources for the Zedboard OLED Demo.
 
-This project is a Vivado demo using the Zedboard's LEDs, pushbuttons and OLED Display written in Verilog. When programmed onto the board, the display will automatically be initialized. When you are done operating the demo, and want to turn your board off, press the CPU Reset Button to turn the display off. LED0 is tied to the status of the OLED display. If the LED0 is on so is the OLED display. The display can be turned on from an off state by pressing the CPU Reset Button again. The OLED Display is controlled by the BTNR, BTNU, BTNC and BTND of the D-Pad Buttons.
+This project is a Vivado demo using the Zedboard's LEDs, pushbuttons and OLED Display written in Verilog. When programmed onto the board, the display will automatically be initialized. When you are done operating the demo, and want to turn your board off, press the BTNR to turn the display off. LED0 is tied to the status of the OLED display. If the LED0 is on so is the OLED display. The display can be turned on from an off state by pressing the CPU Reset Button again. The OLED Display is controlled by the BTNR, BTNU, BTNC and BTND of the D-Pad Buttons.
 
 For more information on the Zedboard OLED, including setup instructions, visit its [Demo Page](https://digilent.com/reference/programmable-logic/zedboard/demos/oled) on the Digilent Wiki.
 

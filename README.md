@@ -18,7 +18,7 @@
 !!! Before shutting down/reprogramming the board please make sure you properly turn off the OLED display by pressing the BTNR button. When the display is off, LD0 should also be off.
 This is necessary to prevent damaging the OLED display.
 
-After shutting down the OLED display from the BTNR button, it is possible to open it again from the BTNR button only after 3.5 seconds passed.
+After shutting down the OLED display from the BTNR button, please wait for at least 3.5 seconds before turning off the board/reprogramming the FPGA/turning the OLED display back on. This is necessary for the OLED display supply rails to properly wind down and prevent damage to the OLED.
 
 This branch contains sources for the Zedboard OLED Demo.
 
